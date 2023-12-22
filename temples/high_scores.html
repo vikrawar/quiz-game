@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: flex;
+      margin-left:-5px;
+      margin-right:-5px;
+    }
+
+    .column {
+      flex: 0%;
+      padding: 5px;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+</style>
+<title>HIGH SCORES</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+     <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+       <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+         <div class="card-body p-5">
+
+            <h2 class="text-uppercase text-center mb-5">HIGH SCORES</h2>
+
+            <div class="row">
+
+                <div class="column">
+                  <table>
+                    <tr>
+                        <th colspan="2">10 Questions</th>
+                    </tr>
+                    <tr>
+                      <th>Name</th>
+                      <th>Score</th>
+                    </tr>
+                    {% for i in ten %}
+                    <tr>
+                      <td>{{ i["name"] }}</td>
+                      <td>{{ i["score"] }}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+
+                <div class="column">
+                  <table>
+                    <tr>
+                        <th colspan="2">Survival</th>
+                    </tr>
+                    <tr>
+                      <th>Name</th>
+                      <th>Score</th>
+                    </tr>
+                    {% for j in survival %}
+                    <tr>
+                      <td>{{ j["name"] }}</td>
+                      <td>{{ j["score"] }}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+
+                <div class="column">
+                  <table>
+                    <tr>
+                        <th colspan="2">20 Questions</th>
+                    </tr>
+                    <tr>
+                      <th>Name</th>
+                      <th>Score</th>
+                    </tr>
+                    {% for k in twenty %}
+                    <tr>
+                      <td>{{ k["name"] }}</td>
+                      <td>{{ k["score"] }}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+{% endblock %}
