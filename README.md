@@ -11,3 +11,6 @@ Jinja template for easier workflow.
 Python and Flask for the backend.
 
 Sqlite database (which wasn't entirely necessary, but I wanted to try it out)
+
+
+Check out the website here: http://thequizapp.pythonanywhere.com
